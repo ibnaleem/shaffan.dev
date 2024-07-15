@@ -6,5 +6,5 @@ I prefer all communication to be signed + encrypted to one of <a href="pgp.html"
 **Languages:** Python, Java, C, C++, C#, Haskell, JavaScript, HTML/CSS
 
 **Technologies:** Git/GitHub, Pandas, Numpy, RESTful APIs, Websockets, Linux/Windows/MacOS, Unix terminals, Blockchains, Metasploit, Nmap
-
+### Disclaimer
 This website was built in pure HTML/CSS with zero telemetry. I only use [this script](https://anmolgautam.com/repo-card/repo-card.js) to display my GitHub projects. I do not collect any data from this website. I have no way to anyway.
