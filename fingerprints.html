@@ -13,17 +13,30 @@
 <body>
     <div class="content">
         <h3>PGP Key Fingerprints
-            <span>Updated Sun, 14 Jul 2024 12:23:00 GMT
-                <br>
-                <a href="/"><< Back to home</a>
-                |
-                <a href="https://github.com/ibnaleem" , noreferrer="">GitHub</a>
-                |
-                <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/" , noreferrer="">LinkedIn</a>
-                |
-                <a href="pgp.html" , noreferrer="">PGP Keys</a>
-                |
-                <a href="https://fosstodon.org/@ibnaleem" , noreferrer="">Fosstodon</a>
+            <script>
+                fetch('https://api.github.com/repos/ibnaleem/shaffan.dev/commits?per_page=1')
+                .then(res => res.json())
+                .then(res => {
+
+                let commit = res[0].sha.toString();
+                let slicedCommit = commit.slice(0, 7);
+
+                let dateStr = res[0].commit.committer.date.toString();
+                let date = new Date(dateStr);
+
+                let year = date.getUTCFullYear();
+                let month = String(date.getUTCMonth() + 1).padStart(2, '0')
+                let day = String(date.getUTCDate()).padStart(2, '0');
+                let hours = String(date.getUTCHours()).padStart(2, '0');
+                let minutes = String(date.getUTCMinutes()).padStart(2, '0');
+                let seconds = String(date.getUTCSeconds()).padStart(2, '0');
+
+                let formattedDate = `${year}-${month}-${day} @ ${hours}:${minutes}:${seconds}`;
+
+                document.getElementById('latest-commit').innerHTML = `<a href="https://github.com/ibnaleem/shaffan.dev/commit/${commit}">Latest Commit: ${slicedCommit} on ${formattedDate}</a><br> <a href="https://github.com/ibnaleem", noreferrer="">GitHub</a> | <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/", noreferrer="">LinkedIn</a> | <a href="pgp.txt", noreferrer="">PGP Keys</a> | <a href="https://fosstodon.org/@ibnaleem", noreferrer="">Fosstodon</a>`
+            })
+            </script>
+            <span id="latest-commit">...
             </span>
         </h3>
         <p>
