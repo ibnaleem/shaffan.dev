@@ -1,7 +1,7 @@
 # 🔗 [shaffan.dev](https://shaffan.dev)
 👋 Welcome to my personal website. I am Shaffan Aleem, a second year Computer Science student @ University of Liverpool interested in FOSS + InfoSec/Pentesting & Blockchain technologies.
 
-I prefer all communication to be signed + encrypted to one of <a href="pgp.html">my PGP keys.</a> For convenience, use the PGP key associated with the email address you are contacting. <b>Do not</b> sign + encrypt any messages if the imported key does not match <a href="fingerprints.html">my fingerprints.</a>
+I prefer all communication to be signed + encrypted to one of [my PGP keys.](https://shaffan.dev/pgp.txt) For convenience, use the PGP key associated with the email address you are contacting. **Do not** sign + encrypt any messages if the imported key does not match [my fingerprints.](https://shaffan.dev/fingerprints.html)
 ### Skills & Tools
 **Languages:** Python, Java, C, C++, C#, Haskell, JavaScript, HTML/CSS
 
