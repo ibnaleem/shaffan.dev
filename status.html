@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>⚡️ shaffan.dev</title>
+    <meta name="description" content="Shaffan Aleem | Ibn Aleem">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="me" href="https://fosstodon.org/@ibnaleem">
+    <script src="status.js" defer></script>
+</head>
+<body>
+    <div class="content">
+        <h3>Git Status
+        <script>
+          fetch('https://api.github.com/repos/ibnaleem/shaffan.dev/commits?per_page=1')
+              .then(res => res.json())
+              .then(res => {
+                  let commit = res[0].sha;
+                  let nodeID = res[0].node_id;
+                  let authorName = res[0].commit.author.name;
+                  let authorEmail = res[0].commit.author.email;
+                  let commitMessage = res[0].commit.message;
+                  let treeHash = res[0].commit.tree.sha;
+                  let pgpSig = res[0].commit.verification.signature;
+                  let parentHash = res[0].parents[0].sha;
+  
+                  let dateStr = res[0].commit.author.date;
+                  let date = new Date(dateStr);
+                  let year = date.getUTCFullYear();
+                  let month = String(date.getUTCMonth() + 1).padStart(2, '0');
+                  let day = String(date.getUTCDate()).padStart(2, '0');
+                  let hours = String(date.getUTCHours()).padStart(2, '0');
+                  let minutes = String(date.getUTCMinutes()).padStart(2, '0');
+                  let seconds = String(date.getUTCSeconds()).padStart(2, '0');
+                  let formattedDate = `${year}-${month}-${day} @ ${hours}:${minutes}:${seconds}`;
+  
+                  document.getElementById('latest-commit').innerHTML = `<a href="status.html">Latest Commit: ${commit.slice(0, 7)} on ${formattedDate}</a><br><a href="/" noreferrer=""><< Back to home</a> | <a href="https://github.com/ibnaleem", noreferrer="">GitHub</a> | <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/", noreferrer="">LinkedIn</a> | <a href="pgp.txt" noreferrer="">PGP Keys</a> | <a href="https://fosstodon.org/@ibnaleem", noreferrer="">Fosstodon</a>`;
+  
+                  document.getElementById('sha1-hash').textContent = commit;
+                  document.getElementById('node-id').textContent = nodeID;
+                  document.getElementById('commit-author-name').textContent = `Username: ${authorName}`;
+                  document.getElementById('commit-author-email').textContent = authorEmail;
+                  document.getElementById('commit-author-date').textContent = formattedDate;
+                  document.getElementById('commit-author-message').textContent = `Commit message: ${commitMessage}`;
+                  document.getElementById('tree-sha1-hash').textContent = treeHash;
+                  document.getElementById('pgp-signature').textContent = pgpSig;
+                  document.getElementById('parent-sha1-hash').textContent = parentHash;
+              })
+        </script>
+        <span id="latest-commit">...
+        </span>
+        </h3>
+        <h4>SHA1 Hash</h4>
+        <div>
+            <ul>
+                <li><code id="sha1-hash"></code></li>
+            </ul>
+        </div>
+        <h4>Node ID</h4>
+        <div>
+            <ul>
+                <li><code id="node-id"></code></li>
+            </ul>
+        </div>
+        <h4>Author</h4>
+        <div>
+            <ul>
+                <li><code id="commit-author-name"></code></li>
+                <li><code id="commit-author-email"></code></li>
+                <li><code id="commit-author-date"></code></li>
+                <li><code id="commit-author-message"></code></li>
+            </ul>
+        </div>
+        <h4>Tree SHA1-Hash</h4>
+        <div>
+            <ul>
+                <li><code id="tree-sha1-hash"></code></li>
+            </ul>
+        </div>
+        <h4>PGP Signature</h4>
+        <pre id="pgp-signature"></pre>
+        <h4>Parent SHA1-Hash</h4>
+        <div>
+            <ul>
+                <li><code id="parent-sha1-hash"></code></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
