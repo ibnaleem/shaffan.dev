@@ -1,3 +1,4 @@
+[![pages-build-deployment](https://github.com/ibnaleem/shaffan.dev/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ibnaleem/shaffan.dev/actions/workflows/pages/pages-build-deployment)
 # 🔗 [shaffan.dev](https://shaffan.dev)
 👋 Welcome to my personal website. I am Shaffan Aleem, a second year Computer Science student @ University of Liverpool interested in FOSS + InfoSec/Pentesting & Blockchain technologies.
 
