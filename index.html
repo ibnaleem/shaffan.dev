@@ -1,84 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>⚡️ shaffan.dev</title>
-        <meta name="description" content="Shaffan Aleem | Ibn Aleem">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="me" href="https://fosstodon.org/@ibnaleem">
-	<link rel="icon" href="https://mir-s3-cdn-cf.behance.net/project_modules/1400/7064f8105512449.5f7b1e51a8e7a.jpg">
-        <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
-    </head>
-    <body>
-        <div class="content">
-            <h3>shaffan.dev
-                <script>
-                    fetch('https://api.github.com/repos/ibnaleem/shaffan.dev/commits?per_page=1')
-                    .then(res => res.json())
-                    .then(res => {
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <title>shaffan.dev</title>
+</head>
+  <body>
+    <header class='header'>
+  <a class="logo" href="/">home</a>
+  <nav>
+    <a href="https://www.github.com/ibnaleem/shaffan.dev">github</a>
+    <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/">linkedin</a>
+    <a href="Resume.pdf">resume</a>
+    <a href="pgp.txt">pgp keys</a>
+  </nav>
+</header>
+    <div class="container">
+      <h1 class="title">shaffan.dev</h1>
+      <script>
+        fetch('https://api.github.com/repos/ibnaleem/shaffan.dev/commits?per_page=1')
+          .then(res => res.json())
+          .then(res => {
 
-                    let commit = res[0].sha.toString();
-                    let slicedCommit = commit.slice(0, 7);
+            let commit = res[0].sha.toString();
+            let slicedCommit = commit.slice(0, 7);
 
-                    let dateStr = res[0].commit.committer.date.toString();
-                    let date = new Date(dateStr);
+            let dateStr = res[0].commit.committer.date.toString();
+            let date = new Date(dateStr);
 
-                    let year = date.getUTCFullYear();
-                    let month = String(date.getUTCMonth() + 1).padStart(2, '0')
-                    let day = String(date.getUTCDate()).padStart(2, '0');
-                    let hours = String(date.getUTCHours()).padStart(2, '0');
-                    let minutes = String(date.getUTCMinutes()).padStart(2, '0');
-                    let seconds = String(date.getUTCSeconds()).padStart(2, '0');
+            let year = date.getUTCFullYear();
+            let month = String(date.getUTCMonth() + 1).padStart(2, '0')
+            let day = String(date.getUTCDate()).padStart(2, '0');
+            let hours = String(date.getUTCHours()).padStart(2, '0');
+            let minutes = String(date.getUTCMinutes()).padStart(2, '0');
+            let seconds = String(date.getUTCSeconds()).padStart(2, '0');
 
-                    let formattedDate = `${year}-${month}-${day} @ ${hours}:${minutes}:${seconds}`;
+            let formattedDate = `${year}-${month}-${day} @ ${hours}:${minutes}:${seconds}`;
 
-                    document.getElementById('latest-commit').innerHTML = `<a href="status.html">Latest Commit: ${slicedCommit} on ${formattedDate}</a><br> <a href="https://github.com/ibnaleem", noreferrer="">GitHub</a> | <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/", noreferrer="">LinkedIn</a> | <a href="pgp.txt", noreferrer="">PGP Keys</a> | <a href="https://fosstodon.org/@ibnaleem", noreferrer="">Fosstodon</a> | <a href="Resume.pdf", noreferrer="">Resume</a>`
-                })
-                </script>
-                <span id="latest-commit">...
-                </span>
-            </h3>
-            <p>
-            👋 Welcome to my personal website. I am Shaffan Aleem, a second year Computer Science student @ University of Liverpool interested in FOSS + InfoSec/Pentesting & Blockchain technologies.
-            </p>
-            <p>
-                I prefer all communication to be signed + encrypted to one of <a href="pgp.txt">my PGP keys.</a> For convenience, use the PGP key associated with the email address you are contacting. <b>Do not</b> sign + encrypt any messages if the imported key does not match <a href="fingerprints.html">my fingerprints.</a>
-            </p>
-            <h4>Contacts</h4>
-            <div>
-                <ul>
-                    <li>
-                        
-                        <code>
-                            shaffanaleem@hotmail.com (work related enquiries only)
-                        </code>
-                    </li>
-                    <li>
-                        <code>
-                            ibnaleem@outlook.com (github/project related enquiries only)
-                        </code>
-                    </li>
-                </ul>
-            </div>
-            <h4>Skills & Tools</h4>
-            <p><b>Languages:</b> Python, Java, C, C++, C#, Haskell, JavaScript, HTML/CSS
-            <br>
-            <b>Technologies:</b> Git/GitHub, Pandas, Numpy, RESTful APIs, Websockets, Linux/Windows/MacOS, Unix terminals,
-            Blockchains, Metasploit, Nmap</p>
-            <h4>Projects</h4>
-                <div class="repo-card" data-repo="ibnaleem/youtube-2-mp4" data-theme="dark-theme"></div>
-                <div class="repo-card" data-repo="ibnaleem/luhn-algorithm" data-theme="dark-theme"></div>
-                <div class="repo-card" data-repo="ibnaleem/snapscoretracker" data-theme="dark-theme"></div>
-                <div class="repo-card" data-repo="ibnaleem/instatracker" data-theme="dark-theme"></div>
-                <div class="repo-card" data-repo="ibnaleem/blockchain" data-theme="dark-theme"></div>
-            <br>
-            <a href="https://github.com/ibnaleem" noreferrer="">More projects on GitHub >> </a>
-            <h4>Disclaimer</h4>
-            <p>
-                This website was built in pure HTML/CSS with zero telemetry. I only use <a href="https://anmolgautam.com/repo-card/repo-card.js"> this script</a> to display my GitHub projects. I do not collect any data from this website. I have no way to anyway (<a href="https://github.com/ibnaleem/shaffan.dev">source code</a>).
-            </p>
-        </div>        
-    </body>
+            document.getElementById('latest-commit').innerHTML = `<a href="status.html">latest commit: ${slicedCommit} on ${formattedDate}</a>`
+          })
+      </script>
+      <p id="latest-commit">...</p>
+      <p>👋 Welcome to my personal website. I am Shaffan Aleem, a second year Computer Science student @ University of Liverpool interested in fully open-source software &amp; cybersecurity.</p>
+<p>I began programming at age 9 through <a href="https://www.javascript.com/">javascript.com</a> and have been programming since. I learned Python and developed a number of projects such as <a href="https://github.com/ibnaleem/instatracker">an Instagram tracker</a> that records any changes to an Instagram account, <a href="https://github.com/ibnaleem/snapscoretracker">a Snapscore tracker</a> that allows users to record Snapscore changes with various metrics, <a href="https://github.com/ibnaleem/youtube-2-mp4">a YouTube 2 MP4 tool</a> as an alternative to malware ridden websites, the <a href="https://github.com/ibnaleem/luhn-algorithm">luhn-algorithm implementation in C++,</a> and numerous Discord bots. My projects can be viewed on my <a href="https://github.com/ibnaleem">GitHub</a>.</p>
+<p>I am currently seeking internships in software engineering and cybersecurity.</p>
+<p>For any enquiries, please contact me on <a href="mailto:contact@shaffan.dev">contact@shaffan.dev</a></p>
+    </div>
+  </body>
 </html>
