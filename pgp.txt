@@ -1,14 +1,4 @@
-PGP encryption ensures that only I can read your message. It also prevents others from impersonating you (if you sign + encrypt your message).
-
-Please include a pastebin link to your PGP key in your message if you intend on signing + encrypting messages (recommended)
-
-How to import:
-Download this file: curl -o pgp.txt https://shaffan.dev/pgp.txt
-Import: gpg --import pgp.txt
-
-How to verify:
-Download signature: curl -o signed.txt https://shaffan.dev/signed.txt
-Verify: gpg --verify signed.txt
+Proofs can be viewed @ https://shaffan.dev/proofs.txt
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
