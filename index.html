@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>shaffan.dev</title>
+  <meta name="description" content="Shaffan Aleem | Ibn Aleem">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="me" href="https://fosstodon.org/@ibnaleem">
 </head>
-  <body>
-    <header class='header'>
-  <a class="logo" href="/">home</a>
-  <nav>
-    <a href="https://www.github.com/ibnaleem/shaffan.dev">github</a>
-    <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/">linkedin</a>
-    <a href="Resume.pdf">resume</a>
-    <a href="pgp.txt">pgp keys</a>
-  </nav>
-</header>
-    <div class="container">
-      <h1 class="title">shaffan.dev</h1>
-      <script>
-        fetch('https://api.github.com/repos/ibnaleem/shaffan.dev/commits?per_page=1')
-          .then(res => res.json())
-          .then(res => {
 
-            let commit = res[0].sha.toString();
-            let slicedCommit = commit.slice(0, 7);
-
-            let dateStr = res[0].commit.committer.date.toString();
-            let date = new Date(dateStr);
-
-            let year = date.getUTCFullYear();
-            let month = String(date.getUTCMonth() + 1).padStart(2, '0')
-            let day = String(date.getUTCDate()).padStart(2, '0');
-            let hours = String(date.getUTCHours()).padStart(2, '0');
-            let minutes = String(date.getUTCMinutes()).padStart(2, '0');
-            let seconds = String(date.getUTCSeconds()).padStart(2, '0');
-
-            let formattedDate = `${year}-${month}-${day} @ ${hours}:${minutes}:${seconds}`;
-
-            document.getElementById('latest-commit').innerHTML = `<a href="status.html">latest commit: ${slicedCommit} on ${formattedDate}</a>`
-          })
-      </script>
-      <p id="latest-commit">...</p>
-      <p>👋 Welcome to my personal website. I am Shaffan Aleem, a second year Computer Science student @ University of Liverpool interested in fully open-source software &amp; cybersecurity.</p>
-<p>I began programming at age 9 through <a href="https://www.javascript.com/">javascript.com</a> and have been programming since. I learned Python and developed a number of projects such as <a href="https://github.com/ibnaleem/instatracker">an Instagram tracker</a> that records any changes to an Instagram account, <a href="https://github.com/ibnaleem/snapscoretracker">a Snapscore tracker</a> that allows users to record Snapscore changes with various metrics, <a href="https://github.com/ibnaleem/youtube-2-mp4">a YouTube 2 MP4 tool</a> as an alternative to malware ridden websites, the <a href="https://github.com/ibnaleem/luhn-algorithm">luhn-algorithm implementation in C++,</a> and numerous Discord bots. My projects can be viewed on my <a href="https://github.com/ibnaleem">GitHub</a>.</p>
-<p>I am currently seeking internships in software engineering and cybersecurity.</p>
-<p>For any enquiries, please contact me on <a href="mailto:contact@shaffan.dev">contact@shaffan.dev</a></p>
-    </div>
-  </body>
+<body>
+  <div class="content">
+    <h2>shaffan.dev
+      <span id="nav-bar">Updated Thursday, Oct 31 @ 16:43 GMT
+        <br>
+        <a href="https://github.com/ibnaleem">github</a>
+        |
+        <a href="https://www.linkedin.com/in/shaffan-aleem-b7a852255/">linkedin</a>
+        |
+        <a href="Resume.pdf">resume</a>
+        |
+        <a href="pgp.txt">pgp keys</a>
+        |
+        <a href="proofs.txt">proofs</a>
+        |
+        <a href="posts">posts</a>
+      </span>
+    </h2>
+    <p>Are you browsing safely? <a href="https://www.whatismyip.com/">Check your IP</a>.</p>
+    <p>
+      Developer, penetration tester, security researcher, and a second year Computer Science student. I write sometimes, you can view my posts @ <a href="posts">/posts</a>.
+    </p>
+    <h2>Projects</h4>
+    <p>Always coding, here are my favourites:</p>
+    <ul>
+      <li><a href="https://github.com/ibnaleem/instatracker">Instagram Tracker</a>: A Python script that logs changes to an Instagram account, including bio updates, follower changes,
+      following/unfollowing, and post deletions, even for private accounts. I am currently developing version 2 to report
+      individual changes, like specific followers who followed and unfollowed the account, as well as specific accounts followed and unfollowed.</li>
+      <br>
+      <li><a href="https://github.com/ibnaleem/snapscoretracker">Snapcore Tracker</a>: A Python script that tracks changes in Snapchat scores, creating a detailed CSV file with various features like date and time, Snap rates, number of people snapped, etc.</li> 
+      <br>
+      <li><a href="https://github.com/ibnaleem/youtube-2-mp4">YouTube-2-mp4</a>: An open-source Python script for downloading YouTube videos in .mp4 format, contrary to malware ridden websites.</li>
+      <br>
+      <li><a href="https://github.com/ibnaleem/luhn-algorithm">Luhn's Algorithm</a>: Luhn's Algorithm implementation in C++ for validating credit card numbers.</li>
+    <ul>
+    <p>All other projects can be viewed on my <a href="https://github.com/ibnaleem">GitHub</a>.</p>
+    <h2>Contact</h2>
+    <p>Any enquiries should be direced to <a href="mailto:shaffanaleem@hotmail.com">shaffanaleem@hotmail.com</a>. PGP keys can be found @ <a href="/pgp.txt">/pgp.txt</a> and proofs found @ <a href="proofs.txt">/proofs.txt</a>.</p>
+  </div>
+</body>
 </html>
