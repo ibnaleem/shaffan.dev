@@ -22,11 +22,14 @@ body {
 
 
 h2 span {
-    margin-top: 5px;
     font-size: 12px;
     font-weight: normal;
     float: right;
     text-align: right;
+}
+
+span#nav-bar {
+    font-size: medium;
 }
 
 a {
@@ -39,12 +42,27 @@ ul {
     margin: 0;
 }
 
-li {
+li .projects {
     padding-left: 1em;
     text-indent: -.7em;
 }
 
-li::before {
+li::before .projects {
     content: "•";
     padding-right: .2em;
+}
+
+.post-header h1 {
+    margin-bottom: 0;
+}
+
+.post-header p {
+    margin-top: 0.1em;
+}
+
+.post-header {
+    border-bottom: 1px solid blue;
+    /* Adjust thickness and color as needed */
+    padding-bottom: 1px;
+    /* Optional: Add some padding for spacing */
 }
