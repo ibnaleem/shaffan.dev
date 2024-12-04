@@ -1,6 +1,31 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
+Updated on 04/12/2024 @ 19:45 GMT
+
+I hereby confirm that I, Shaffan Aleem, am alive and in full control:
+
+1. of my domain shaffan.dev (shaffan dot dev) and it's DNS records, which can be verified with the command (dig shaffan.dev TXT ; dig _keybase.shaffan.dev TXT) | grep keybase
+
+2. of my github account, which can be verified @ https://gist.github.com/ibnaleem/bae8c71b65acdf88eaab1214ae022538
+
+3. of my keybase account, found @ https://keybase.io/ibnaleem
+
+4. of the contents of my website hosted @ https://github.com/ibnaleem/shaffan.dev, with each commit signed with my GPG key 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
+
+5. of the GPG keys hosted @ shaffan.dev/pgp.txt:
+5.1 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
+5.2 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8
+
+6. of my email addresses ibnaleem@outlook.com, shaffanaleem@hotmail.com and root@shaffan.dev
+
+If this file does not yield a valid signature, disregard the above and assume they are compromised. If the signature is valid, then I am alive and in full control of my accounts. If the signature is valid but I have not updated this file in three months or longer, then I am dead.
+
+This file will always be signed by my GPG key 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8.
+
+- -----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 Updated on 31/10/2024 @ 15:46 GMT
 
 I hereby confirm that I, Shaffan Aleem, am alive and in full control:
@@ -22,7 +47,7 @@ I hereby confirm that I, Shaffan Aleem, am alive and in full control:
 If this file does not yield a valid signature, disregard the above and assume they are compromised. If the signature is valid, then I am alive and in full control of my accounts. If the signature is valid but I have not updated this file in three months or longer, then I am dead.
 
 This file will always be signed by my GPG key 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8.
------BEGIN PGP SIGNATURE-----
+- -----BEGIN PGP SIGNATURE-----
 
 iQIzBAEBCAAdFiEEYiaSNJq7Vva1IO1BenSdxdikWLgFAmcjpkQACgkQenSdxdik
 WLj1jBAAnxCSd0qyjMSsxOMWLhW/eMSB08ERRVytnD0J086q1w52k50kY73oMaJB
@@ -37,4 +62,20 @@ RoruU3hKrfoouOpuR8tMDiEu7GfwPR5AkXLncWgxqS1AM43aIEz4xiBM7AMh2d17
 OwZYbjDGkhGtFu/5gkk1j9IEZhgEphmUPM9a1ndGCpY7sstojt2N5OT+m4/2a5Xv
 UQ45u792oqhzjIqePQBRvJZY3CPAXm9xAbPUA4OUnWMJ6b7Xg9k=
 =kUUE
+- -----END PGP SIGNATURE-----
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEYiaSNJq7Vva1IO1BenSdxdikWLgFAmdQsUsACgkQenSdxdik
+WLgiuw//epBzEakiziGh1mLeEpkfQMpqGNXmfGcVE+DVpVxvotc2lMaqNPPrCNkd
+ne3720Ka2RZATGkZDaud3ER9KWZjCWDhdgGb0GN6eABlKMsgO1gcN5/YGzLSQYnp
+B+x/LnAu7AVPCHl4eGYrqPeUlaKJ5xtF4F/zOQanhOoTVClUTgoEJ2bUCgPWb/Rk
+7Pay0xosY5G5NDPJITMNrbdqtixiLeeDVj9yh9JMsRLRNymxNbJGcp7msySYC9Ro
+Pi9IQTA3jZgbCCKicJ/TixGxLbVawZ8dMzkWmttXXRvv433cAfQC5KKmiHi21mrr
+y5RTTwIFkzqivYtvE6AcbxklLOsB3BYnJH38gjlK55iEy9kpAvFCHc1XJwAqNOz+
+F3WZb0n7nkou3P4B2uxgU839c0mjJlbcjRo9xuUanm4nir+ES3gAe2QLbOJDfAYo
+i5jWrCqDVAUKowmh1HXCq55t2PaRYHQcdTYHJlyAHd130CVnQhPL+Kl2T4Gjcsfi
+uw9aIe45e9IsFO7MCmvaBvlYwLIsaUzt+0lgn+ZfHWXYb4KwWvUIO+Z6jwMGq/6U
+2PzEJ7TO6F5BwW7XD4IGNDRMPqO3qBd3iohglmqDkWEMlBPXlAerzopqtRC9B1EO
+FV8uct7L6ersc2GHF8yP1ZO0iXrGpeP5GgPWHVDr1l2EQvtXp54=
+=pHGu
 -----END PGP SIGNATURE-----
