@@ -1,8 +1,66 @@
-Proofs can be viewed @ https://shaffan.dev/proofs.txt
+Proofs can be viewed @ https://shaffan.dev/proofs.txt. Please use the PGP key that is associated with the email address you are contacting.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: D8F2 A405 F595 F0B8 96B3  D2CE F7CA DE14 3EE0 7311
+Comment: Shaffan Aleem <root@shaffan.dev>
+Comment: Expires March 02 2025 (2025-03-02)
+Comment: This key is used to sign https://shaffan.dev/proofs.txt
+
+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
+jbJdRdROOPUycMs=
+=LlTN
+-----END PGP PUBLIC KEY BLOCK-----
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
-Comment: Ibn Aleem 
+Comment: Ibn Aleem <ibnaleem@outlook.com>
+Comment: This key is used for signing binaries amd GitHub commits
             
 xsFNBGVPmXcBEACtGLnSoh+hgHvWrTU/aBvO0HO5QglML+jzDR5K9f6+Ck5Gzolt
 IU7I93wfm/unEfOEY0I6StYPjMrXZ4oXLVVWdBPiO5ntjSyAED2OQAkwCm9qXbjr
@@ -56,7 +114,7 @@ OrSb70JdFEXQEgkTW08TaTRxMZe2Rw0hA0ZOO0DjPAjanNY0nWFDXz9O3N+4f6U/
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8
-Comment: Shaffan Aleem 
+Comment: Shaffan Aleem <shaffanaleem@hotmail.com>
             
 xsFNBGZQl6YBEADrMad0wTwh8bLtvWwr5PQM+6aJGXnfdgqybzQ3UUJr2/T2VAOs
 OpEwdCrRQvaw8Ty70OQsItedwuDsZBcYYA7p3Gf1sxuMNdoS0QJ6KzgdZ34zVZQR
