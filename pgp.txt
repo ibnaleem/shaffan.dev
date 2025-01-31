@@ -5,6 +5,7 @@ Comment: D8F2 A405 F595 F0B8 96B3  D2CE F7CA DE14 3EE0 7311
 Comment: Shaffan Aleem <root@shaffan.dev>
 Comment: Expires March 02 2025 (2025-03-02)
 Comment: This key is used to sign https://shaffan.dev/proofs.txt
+Comment: This key's rotation can be viewed @ https://shaffan.dev/rotation.txt
 
 xsFNBGedNaMBEACdnmrLKz/q1JA6OsZ6wRCJkeKia5gSTN+1Lpj8xqFue2ZYeC1U
 jB8kYcigPjFOXTOAls/QQnbiFxaX42peI4w2Z6jq618X0VCwMo1AY7SDaLYE1rG/
