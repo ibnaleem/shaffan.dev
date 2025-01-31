@@ -1,4 +1,7 @@
-Updated on 31/01/2025 @ 22:30 GMT
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Updated on 31/01/2025 @ 22:40 GMT
 
 I hereby confirm that I, Shaffan Aleem, am alive and in full control:
 
@@ -10,12 +13,18 @@ I hereby confirm that I, Shaffan Aleem, am alive and in full control:
 
 4. of the contents of my website hosted @ https://github.com/ibnaleem/shaffan.dev, with each commit signed with my GPG key 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
 
-5. of the GPG keys hosted @ shaffan.dev/pgp.txt:
-5.1 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
-5.2 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8
-5.3 D8F2 A405 F595 F0B8 96B3  D2CE F7CA DE14 3EE0 7311
+5. of my buymeacoffee accounts (1) https://buymeacoffee.com/ibnaleem (2) https://buymeacoffee.com/gosearch
 
-6. of my email addresses ibnaleem@outlook.com, shaffanaleem@hotmail.com and root@shaffan.dev
+6. of my thanks.dev account, found @ https://thanks.dev/gh/ibnaleem
+
+7. of my polar.sh account, found @ https://polar.sh/gosearch
+
+8. of the GPG keys hosted @ shaffan.dev/pgp.txt:
+8.1 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
+8.2 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8
+8.3 D8F2 A405 F595 F0B8 96B3  D2CE F7CA DE14 3EE0 7311
+
+9. of my email addresses ibnaleem@outlook.com, shaffanaleem@hotmail.com and root@shaffan.dev
 
 Any accounts with my name (Shaffan Aleem) or GitHub username (ibnaleem) that are not stated in this file DO NOT belong to me. Impersonation is easy, do not be fooled. Unless I explicitly state it in this file, the account DOES NOT belong to me.
 
@@ -24,3 +33,19 @@ If this file does not yield a valid signature, disregard the above and assume th
 Previously, this file was always signed by my GPG key 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8. However, I've decided to dedicate another key D8F2 A405 F595 F0B8 96B3  D2CE F7CA DE14 3EE0 7311 for this purpose. This key will expire 02 March 2025. Its rotation history can be viewed @ https://shaffan.dev/rotation.txt.
 
 Signature history can be viewed @ https://github.com/ibnaleem/shaffan.dev/commits/main/proofs.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE2PKkBfWV8LiWs9LO98reFD7gcxEFAmedT/IACgkQ98reFD7g
+cxHwHw//XNGVYWeDf0Uq5vrNfsn6wB44MOrNyLA/LsGthJdXf44GRGrhxKSPfSnq
+Hzyyzd48KNQtpsP9gg5qLJbm4Kya/KLnXbY1mPormeJVOaG3l/MtRkq8oimaM3W/
+hCCQf4uMl9j9NbvsCTF6aj5Hly+Usaf89QJU0hN43tFkGIRBa6bYl+yNGXwkZZC/
+SmzcxeOi/y20H2wleabtxHIHxbAo4kXIDdw0luqicWJioH6GxQnw89IRbT8ep5Q5
+tfSQAUAVQzQ/vMrnJtCWMAsq+nhdob6K8eiXtD7bB1C+pB6r0mT2hr1GoRoyRtLH
+KZxL2CRKesvoyZnfB37Zb7YBPq8kwnEB0pUuMe/125TAM6m+gQJZxx6EqrbhVwcl
+UMfrt0z7no/O9L5J5Sv2pWAkgEzHy8CFFWDCewiyN/flfwsSWHDSpPuuDxzlzSGK
+yESp4NCF5luKBL8kSqHsWET700zPFAY+c5Mi/njm4W4NMShOY2WEPWwAUh95WOtk
+AWFZGM4l+cpNDIZ1EPLGKJivDCiexgJyu2gUA6QdXmUBsggJBEbje96ng9LvZ/bZ
+U7/eS1J7x3RJHvd6wCM6coWWpoBjvBc9I2PQ6eVL8cOyWwNygbJOz7veJVOrppWX
+beyRx393sEfsZwkCXSPjmbPSFZNluQiLwrZhvrBtaTSmyp+keQk=
+=OATY
+-----END PGP SIGNATURE-----
