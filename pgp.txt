@@ -61,7 +61,7 @@ jbJdRdROOPUycMs=
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
 Comment: Ibn Aleem <ibnaleem@outlook.com>
-Comment: This key is used for signing binaries amd GitHub commits
+Comment: This key is used for signing binaries and GitHub commits
             
 xsFNBGVPmXcBEACtGLnSoh+hgHvWrTU/aBvO0HO5QglML+jzDR5K9f6+Ck5Gzolt
 IU7I93wfm/unEfOEY0I6StYPjMrXZ4oXLVVWdBPiO5ntjSyAED2OQAkwCm9qXbjr
