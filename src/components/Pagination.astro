@@ -1,0 +1,57 @@
+---
+import Link from "./Link.astro";
+
+type Page = {
+  label: string | number;
+  href?: string;
+  active?: boolean;
+};
+
+type Props = {
+  pages: Page[];
+  showDots?: boolean;
+  previousHref?: string;
+  nextHref?: string;
+};
+
+const { pages, showDots = true, previousHref, nextHref } = Astro.props;
+---
+
+<nav class="flex justify-center items-center gap-2 mt-8" aria-label="Pagination">
+  {previousHref ? (
+    <Link href={previousHref} class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded" underline={false}>
+      ← Previous
+    </Link>
+  ) : (
+    <span class="px-4 py-2 text-gray-600">← Previous</span>
+  )}
+
+  <div class="flex gap-1">
+    {pages.map((page) => (
+      page.href ? (
+        <Link
+          href={page.href}
+          class={`px-3 py-1 rounded ${
+            page.active
+              ? "bg-blue-600 text-white"
+              : "bg-gray-800 hover:bg-gray-700"
+          }`}
+          aria-current={page.active ? "page" : undefined}
+          underline={false}
+        >
+          {page.label}
+        </Link>
+      ) : (
+         <span class="px-3 py-1 text-gray-400">{page.label}</span>
+      )
+    ))}
+  </div>
+
+  {nextHref ? (
+    <Link href={nextHref} class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded" underline={false}>
+      Next →
+    </Link>
+  ) : (
+    <span class="px-4 py-2 text-gray-600">Next →</span>
+  )}
+</nav>
