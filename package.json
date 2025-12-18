@@ -9,8 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@prisma/client": "^7.2.0",
+    "@prisma/extension-accelerate": "^3.0.1",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "prisma": "^7.2.0"
   }
 }
