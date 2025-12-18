@@ -1,0 +1,33 @@
+---
+import Container from "./Container.astro"
+import Link from "./Link.astro";
+
+const { title } = Astro.props;
+---
+
+<header transition:persist>
+  <Container>
+    <div class="flex flex-wrap justify-between gap-y-2 py-2">
+      <Link href="/" underline={false}>
+        <div class="text-2xl font-bold">
+          {title ?? "/home/shaffan.dev"}
+        </div>
+      </Link>
+      <nav class="flex items-center gap-3 text-lg">
+        <span>
+          <Link href="/whoami">whoami</Link>
+          {`/`}
+        </span>
+        <Link href="https://linkedin.com/in/shaffan-a-b7a852255">linkedin</Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/news">news</Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/projects">projects</Link>
+      </nav>
+    </div>
+  </Container>
+</header>
