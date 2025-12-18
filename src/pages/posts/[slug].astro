@@ -1,0 +1,42 @@
+---
+export const prerender = false;
+
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/Container.astro";
+
+import prisma from "../../lib/prisma"
+
+import { marked } from 'marked';
+
+const { slug } = Astro.params;
+const id = Number(slug);
+
+if (!Number.isFinite(id)) {
+  throw new Response("Not found", { status: 404 });
+}
+
+const post = await prisma.post.findFirst({ where: { id, published: true } });
+
+const content = marked.parse(post?.content ?? '');
+
+const formatDate = (date: string | Date) =>
+  new Intl.DateTimeFormat("en-GB").format(new Date(date));
+---
+
+<Layout title={post?.title ?? "Post Not Found"}>
+  <Container>
+    <div>
+    <section>
+        {post ? (
+          <article set:html={content} class="space-y-4">
+            <p class="text-sm text-gray-400">Published {formatDate(post.createdAt)}</p>
+          </article>
+        ) : (
+          <p>Post not found.</p>
+        )}
+    </section>
+    </div>
+  </Container>
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag.js"></script> 
