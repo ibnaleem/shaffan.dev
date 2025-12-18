@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import Link from "../components/Link.astro";
+import InlineTooltip from "../components/InlineTooltip.astro";
+
+const res = await fetch("https://api.thecatapi.com/v1/images/search");
+const data = await res.json();
+
+const cat = data[0];
+---
+<Layout title="whoami">
+	<Container>
+		<div>
+		<section>
+			<article class="space-y-4">
+				<span>
+					<p>
+						By day I'm a Software Engineer @ Diagnostic World. By night I'm an offensive security researcher that develops open-source tools on GitHub under the alias <Link href="https://github.com/ibnaleem">@ibnaleem</Link>. I'm also studying Computer Science @ University of Liverpool.
+					</p>
+					<p>
+						I'm currently working on <Link href="https://github.com/ibnaleem/gosearch">GoSearch</Link>, an open-source intelligence tool written in Go. It currently has <img
+                  src="https://img.shields.io/github/stars/ibnaleem/gosearch"
+                  style="display: inline; vertical-align: middle;"
+                />
+                and <img
+                  src="https://img.shields.io/github/contributors/ibnaleem/gosearch"
+                  style="display: inline; vertical-align: middle;"
+                />. Feel free to contribute.
+					</p>
+					</p>
+					<p>
+						I also crack{" "}
+						<InlineTooltip
+							label="hashes"
+							description="A hash is a one-way cryptographic function that converts data (such as a password) into a fixed-length value to represent that data in a secure way. Hash cracking attempts to recover the original input. You can learn more about how I recover hashes by reading my /posts"
+						/>{" "}
+						on <Link href="https://hashmob.net">hashmob.net</Link> under the alias @zero.
+						You can view my stats <Link href="/stats">here</Link>.
+					</p>
+					<p>
+						I've mostly learned everything from free and open-source resources on the internet. 
+						I believe information should be free and accessible to everyone across the world.
+						That's why I've created this website: to share my knowledge and projects with you.
+					</p>
+					<p>
+						Apart from technology, I really love cats. You can always email me a picture of your cat.
+					</p>
+					<h1 class="mb-2">Favourites</h1>
+					<ul>
+						<li>Programming Language: <InlineTooltip label="Go" description="I love Go for its simplicity & performance. It's a stricter and faster Python"/></li>
+						<li>Text Editor: <InlineTooltip label="VSCode" description="I dislike the bloat, but it just works. I do occasionally use Neovim for quick edits" /></li>
+						<li>Video Games: Elden Ring, Detroit Become Human, Cyberpunk 2077, <InlineTooltip label="Geometry Dash" description="Been playing since 2014" /></li>
+						<li>Movies: Interstellar, Sinners, Wall-E</li>
+						<li>TV Shows: Mr. Robot, Game of Thrones, Lost, Breaking Bad</li>
+						<li>Anime: Attack on Titan, Death Note, Code Geass</li>
+						
+					</ul>
+					<h1 class="mb-2">Contact</h1>
+					<p>
+						Challenge: find my primary email address :)
+					</p>
+					<h1 class="mb-2">PGP Keys</h1>
+					<p>All PGP keys can be found on <Link href="/pgp.txt">/pgp.txt</Link></p>
+			</span>
+			<h1 class="mb-2">GitHub Stats</h1>
+				<span>
+					<img
+						src="https://github-readme-stats.vercel.app/api/top-langs/?username=ibnaleem&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact"
+						alt="Top languages"
+					/><br />
+					<img
+						src="https://github-readme-streak-stats.herokuapp.com/?user=ibnaleem&theme=dark&hide_border=false"
+						alt="GitHub streak stats"
+					/>
+				</span>
+				<hr class="my-6 border-gray-700">
+
+				{cat?.url && (
+					<img
+						src={cat.url}
+						alt="Random cat"
+						loading="lazy"/>
+					)}
+					<div class="text-center">
+						<small class="text-gray-500">
+							not my cat lol
+						</small>
+					</div>
+			</article>
+		</section>
+		</div>
+		</Container>
+</Layout>
