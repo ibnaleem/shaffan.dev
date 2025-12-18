@@ -2,6 +2,7 @@
 dist/
 # generated types
 .astro/
+.astro-cache/
 
 # dependencies
 node_modules/
@@ -15,10 +16,16 @@ pnpm-debug.log*
 
 # environment variables
 .env
+.env.*
 .env.production
 
 # macOS-specific files
 .DS_Store
+Thumbs.db
 
 # jetbrains setting folder
 .idea/
+!.vscode/extensions.json
+*.swp
+
+/src/generated/prisma
