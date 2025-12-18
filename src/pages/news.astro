@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import Link from "../components/Link.astro";
+
+import type { NewsApiResponse, NewsArticle } from "../lib/news";
+import { fetchSecurityNews } from "../lib/news";
+
+const newsData: NewsApiResponse = await fetchSecurityNews();
+---
+<Layout title="weekly security news">
+  <Container>
+    <section>
+      <article class="space-y-4">
+        {newsData.articles.length === 0 ? (
+          <p>No news articles found.</p>
+        ) : (
+          <ul class="space-y-4">
+            {newsData.articles.map((article: NewsArticle) => (
+
+              <li class="space-y-1">
+                <Link href={article.url}>{article.title}</Link>
+
+                <div class="flex flex-wrap gap-x-2 text-sm text-gray-600">
+                  <span>{new Date(article.publishedAt).toLocaleDateString("en-GB")}</span>
+                  <span>•</span>
+                  <span>
+                    <span class="text-blue-600">
+                      {article.author ?? "Unknown author"}
+                    </span>
+                    {" — "}
+                    <span class="text-yellow-400">
+                      {typeof article.source === "string"
+                        ? article.source
+                        : article.source?.name ?? "Unknown source"}
+                    </span>
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </article>
+    </section>
+  </Container>
+</Layout>
