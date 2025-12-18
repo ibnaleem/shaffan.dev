@@ -1,16 +1,74 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import Link from "../components/Link.astro";
+import Pagination from "../components/Pagination.astro";
 
+import type { Post } from "../generated/prisma/client";
+import { GET } from "./api/posts.ts";
+
+const response = await GET(Astro);
+const allPosts: Post[] = await response.json();
+
+const PER_PAGE = 5;
+const url = new URL(Astro.url);
+const pageParam = url.searchParams.get("page");
+let currentPage = Number(pageParam || "1");
+
+if (isNaN(currentPage) || currentPage < 1) {
+  currentPage = 1;
+}
+
+const totalPages = Math.ceil(allPosts.length / PER_PAGE);
+
+const start = (currentPage - 1) * PER_PAGE;
+const end = start + PER_PAGE;
+const posts = allPosts.slice(start, end);
+
+const formatDate = (date: string | Date) =>
+  new Intl.DateTimeFormat("en-GB").format(new Date(date));
 ---
+<Layout title="shaffan.dev">
+  <Container>
+    <section>
+      <article class="space-y-4">
+        {posts.length === 0 ? (
+          <p>No posts found.</p>
+        ) : (
+          <ul class="space-y-2 list-none">
+            {posts.map((post) => (
+              <li>
+                <Link href={`/posts/${post.id}`}>{formatDate(post.createdAt)} - {post.title}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+      {totalPages > 1 && (
+        <Pagination
+          previousHref={currentPage > 1 ? `/?page=${currentPage - 1}` : undefined}
+          nextHref={currentPage < totalPages ? `/?page=${currentPage + 1}` : undefined}
+          pages={Array.from({ length: Math.min(10, totalPages) }, (_, i) => {
+            let pageNum: number;
+            if (totalPages <= 10) {
+              pageNum = i + 1;
+            } else if (currentPage <= 5) {
+              pageNum = i + 1;
+            } else if (currentPage >= totalPages - 4) {
+              pageNum = totalPages - 9 + i;
+            } else {
+              pageNum = currentPage - 4 + i;
+            }
+            
+            return {
+              label: pageNum,
+              href: `/?page=${pageNum}`,
+              active: pageNum === currentPage
+            };
+          })}
+        />
+      )}
+      </article>
+    </section>
+  </Container>
+
