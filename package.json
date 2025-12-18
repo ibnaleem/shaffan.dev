@@ -9,14 +9,21 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
     "@prisma/extension-accelerate": "^3.0.1",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
+    "dotenv": "^17.2.3",
+    "marked": "^17.0.1",
+    "pg": "^8.16.3",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "tsx": "^4.21.0"
   },
   "devDependencies": {
+    "@types/sanitize-html": "^2.16.0",
     "prisma": "^7.2.0"
   }
 }
