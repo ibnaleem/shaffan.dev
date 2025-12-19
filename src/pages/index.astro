@@ -38,7 +38,7 @@ const formatDate = (date: string | Date) =>
           <ul class="space-y-2 list-none">
             {posts.map((post) => (
               <li>
-                <Link href={`/posts/${post.id}`}>{formatDate(post.createdAt)} - {post.title}</Link>
+                <Link href={`/post/${post.slug}`}>{formatDate(post.createdAt)} - {post.title}</Link>
               </li>
             ))}
           </ul>
