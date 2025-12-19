@@ -60,8 +60,28 @@ const cat = data[0];
 					<p>
 						Challenge: find my primary email address :)
 					</p>
-					<h1 class="mb-2">PGP Keys</h1>
-					<p>All PGP keys can be found on <Link href="/pgp.txt">/pgp.txt</Link></p>
+					<h1 class="mb-2">PGP Key</h1>
+					<ul>
+						<li>
+							<Link href="/api/pgp" class="hover:underline">
+								🔑 Download my PGP keys
+							</Link>
+						</li>
+
+						<li>
+							My <InlineTooltip label="primary key's" description="The other 2 keys are merely there to prove ownership"/> fingerprint:
+							<code>0DA7 C4BF 8D72 DC90 CDD3 CB45 FBB9 1670 5544 F13E</code>
+						</li>
+
+						<li>
+							My primary key expires on <b>March 16, 2026</b>
+						</li>
+
+						<li>
+							Primary key's rotation history can be viewed @
+							<Link href="/rotation.txt">/rotation.txt</Link>
+						</li>
+					</ul>
 			</span>
 			<h1 class="mb-2">GitHub Stats</h1>
 				<span>
