@@ -105,10 +105,33 @@ html.scrolled #back-to-top {
   @apply pointer-events-auto opacity-100;
 }
 
-/* Code blocks */
 pre {
-  @apply border border-white/20 py-5;
+  /* container */
+  @apply my-4 overflow-x-auto rounded-xl border border-white/10 bg-[#0d1117] p-4;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.02) inset;
+
+  padding: 1rem 1.25rem;
+  line-height: 1.6;
+
 }
+
+/* Code inside code blocks */
+pre code {
+  display: block;       
+  @apply bg-transparent p-0 text-inherit;
+  line-height: 1.6;
+  padding: 0;
+}
+
+pre.astro-code {
+  @apply bg-[#0d1117] border-white/10;
+}
+
+/* Inline code (optional but usually needed to match the vibe) */
+:not(pre) > code {
+  @apply rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[0.9em] text-white/90;
+}
+
 
 /* Shiki – dark only */
 :root {
