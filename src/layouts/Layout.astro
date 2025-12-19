@@ -7,6 +7,12 @@ const { title } = Astro.props;
 
 <html lang="en">
 	<head>
+    <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Your Site's Title"
+    href={new URL("rss.xml", "https://shaffan.dev")}
+  />
 		<meta charset="utf-8" />
     <link rel="icon" href="/favicon.png">
 		<meta name="viewport" content="width=device-width" />
