@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/rss": "^4.0.14",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
