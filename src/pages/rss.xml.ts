@@ -1,7 +1,8 @@
 import rss from "@astrojs/rss";
 import prisma from "../lib/prisma";
+import type { APIRoute } from "astro";
 
-export async function get() {
+export const GET: APIRoute = async () => {
   const posts = await prisma.post.findMany({
     where: {published: true},
     orderBy: {createdAt: "desc"},
@@ -19,6 +20,5 @@ export async function get() {
       link: `https://shaffan.dev/post/${post.slug}`,
       content: post.content,
     })),
-    stylesheet: "/rss/styles.xsl",
   })
 }
