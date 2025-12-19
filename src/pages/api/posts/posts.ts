@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import prisma from "../../lib/prisma"
+import prisma from "../../../lib/prisma"
 
 export const GET: APIRoute = async () => {
   const posts = await prisma.post.findMany({
@@ -8,6 +8,8 @@ export const GET: APIRoute = async () => {
       id: true,
       title: true,
       content: true,
+      signature: true,
+      slug: true,
       published: true,
       createdAt: true,
       updatedAt: true,
