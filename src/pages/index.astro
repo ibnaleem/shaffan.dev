@@ -5,7 +5,7 @@ import Link from "../components/Link.astro";
 import Pagination from "../components/Pagination.astro";
 
 import type { Post } from "../generated/prisma/client";
-import { GET } from "./api/posts.ts";
+import { GET } from "./api/posts/posts";
 
 const response = await GET(Astro);
 const allPosts: Post[] = await response.json();
