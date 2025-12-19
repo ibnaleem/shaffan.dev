@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Updated on 16/12/2025 @ 01:25 GMT
+
+I hereby confirm that I, Shaffan Aleem, am alive and in full control:
+
+1. of my domain shaffan.dev (shaffan dot dev) and it's DNS records, which can be verified with the command (dig shaffan.dev TXT ; dig _keybase.shaffan.dev TXT) | grep keybase
+
+2. of my github account, which can be verified @ https://gist.github.com/ibnaleem/bae8c71b65acdf88eaab1214ae022538
+
+3. of my keybase account, found @ https://keybase.io/ibnaleem
+
+4. of the contents of my website hosted @ https://github.com/ibnaleem/shaffan.dev, with each commit signed with my GPG key 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
+
+5. of my buymeacoffee accounts (1) https://buymeacoffee.com/ibnaleem (2) https://buymeacoffee.com/gosearch
+
+6. of my thanks.dev account, found @ https://thanks.dev/gh/ibnaleem
+
+7. of my polar.sh account, found @ https://polar.sh/gosearch
+
+8. of the GPG keys hosted @ shaffan.dev/pgp.txt:
+8.1 2024 7EC0 23F2 769E 6618 1C0F 581B 4A2A 862B BADE
+8.2 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8
+8.3 0DA7 C4BF 8D72 DC90 CDD3 CB45 FBB9 1670 5544 F13E
+
+9. of my email addresses ibnaleem@outlook.com, shaffanaleem@hotmail.com and root@shaffan.dev
+
+Any accounts with my name (Shaffan Aleem) or GitHub username (ibnaleem) that are not stated in this file DO NOT belong to me. Impersonation is easy, do not be fooled. Unless I explicitly state it in this file, the account DOES NOT belong to me.
+
+If this file does not yield a valid signature, disregard the above and assume they are compromised. If the signature is valid, then I am alive and in full control of my accounts. If the signature is valid but I have not updated this file in three months or longer, then I am dead.
+
+Previously, this file was always signed by my PGP key 6226 9234 9ABB 56F6 B520 ED41 7A74 9DC5 D8A4 58B8. However, I've decided to dedicate another key 0DA7 C4BF 8D72 DC90 CDD3 CB45 FBB9 1670 5544 F13E for this purpose. This key will expire 03 March 2026. Its rotation history can be viewed @ https://shaffan.dev/rotation.txt.
+
+Signature history can be viewed @ https://github.com/ibnaleem/shaffan.dev/commits/main/proofs.txt
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQNp8S/jXLckM3Ty0X7uRZwVUTxPgUCaUC07gAKCRD7uRZwVUTx
+Pt9oAP4+e+rX2TdOuO7LulR5+DclvlRh4UG97osnaEoli1/hugD/UZ/p1AUJUw+6
+uR48DPnCR6ZVcbbK9KcnBeYO7P8vKwQ=
+=k+1/
+-----END PGP SIGNATURE-----
