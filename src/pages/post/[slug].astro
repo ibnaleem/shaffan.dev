@@ -1,15 +1,26 @@
 ---
-export const prerender = false;
-
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/Container.astro";
-
-import prisma from "../../lib/prisma"
-
 import { marked } from 'marked';
 
-const { slug } = Astro.params;
-const post = await prisma.post.findFirst({ where: { slug: slug, published: true } });
+import Link from "../../components/Link.astro";
+
+import type { Post } from "../../generated/prisma/client";
+import {GET as GET_ALL } from "../api/posts/posts";
+import { GET as GET_ONE } from "../api/posts/[slug]";
+
+export async function getStaticPaths () {
+
+  const all_posts_response = await GET_ALL(Astro);
+  const posts: Post[] = await all_posts_response.json();
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }))
+};
+
+const one_post_response = await GET_ONE(Astro);
+const post: Post | null = await one_post_response.json();
 
 const content = marked.parse(post?.content ?? '');
 
@@ -23,7 +34,13 @@ const formatDate = (date: string | Date) =>
     <section>
         {post ? (
           <article set:html={content} class="space-y-4">
-            <p class="text-sm text-gray-400">Published {formatDate(post.createdAt)}</p>
+            <span class="flex items-center my-3 gap-2 text-sm text-gray-400">
+              <span>Published {formatDate(post.createdAt)}</span>
+                <span>•</span>
+                <Link href={`/api/signature/${post.slug}`} class="hover:underline">
+                  ✅ Signature
+                </Link>
+              </span>
           </article>
         ) : (
           <p>Post not found.</p>
@@ -32,5 +49,3 @@ const formatDate = (date: string | Date) =>
     </div>
   </Container>
 </Layout>
-
-<script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag.js"></script> 
