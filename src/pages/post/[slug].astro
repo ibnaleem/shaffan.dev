@@ -9,13 +9,7 @@ import prisma from "../../lib/prisma"
 import { marked } from 'marked';
 
 const { slug } = Astro.params;
-const id = Number(slug);
-
-if (!Number.isFinite(id)) {
-  throw new Response("Not found", { status: 404 });
-}
-
-const post = await prisma.post.findFirst({ where: { id, published: true } });
+const post = await prisma.post.findFirst({ where: { slug: slug, published: true } });
 
 const content = marked.parse(post?.content ?? '');
 
