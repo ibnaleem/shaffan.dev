@@ -11,6 +11,7 @@ RUN curl -fsSL https://bun.sh/install | bash
 ENV PATH="${BUN_INSTALL}/bin:${PATH}"
 
 COPY package.json bun.lock ./
+COPY .env ./
 
 RUN bun install
 
@@ -18,15 +19,6 @@ COPY astro.config.mjs tsconfig.json prisma.config.ts ./
 COPY src/ ./src/
 COPY public/ ./public/
 COPY prisma/ ./prisma/
-
-ARG DATABASE_URL
-ENV DATABASE_URL=$DATABASE_URL
-
-ARG NEWSAPI_API_KEY
-ENV NEWSAPI_API_KEY=$NEWSAPI_API_KEY
-
-ARG GITHUB_TOKEN
-ENV GITHUB_TOKEN=$GITHUB_TOKEN
 
 RUN bunx prisma generate
 
