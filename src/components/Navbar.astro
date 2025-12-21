@@ -7,10 +7,10 @@ const { title } = Astro.props;
 
 <header transition:persist>
   <Container>
-    <div class="flex flex-wrap justify-between gap-y-2 py-2">
+    <div class="flex flex-wrap items-center justify-between gap-y-2 py-2">
       <Link href="/" underline={false}>
-        <div class="text-2xl font-bold">
-          {title ?? "/home/shaffan.dev"}
+        <div class="text-2xl font-bold break-words max-w-[70vw] md:max-w-md leading-tight">
+          {title ?? "shaffan.dev"}
         </div>
       </Link>
       <nav class="flex items-center gap-3 text-lg">
