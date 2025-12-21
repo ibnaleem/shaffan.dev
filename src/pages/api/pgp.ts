@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { readFileSync } from "fs";
 
 export const GET: APIRoute = async () => {
-  const pgpKey = readFileSync("public/pgp.txt", "utf-8");
+  const pgpKey = readFileSync("dist/client/pgp.txt", "utf-8");
 
   return new Response(pgpKey, {
     status: 200,
