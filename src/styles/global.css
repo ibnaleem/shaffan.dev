@@ -41,7 +41,7 @@ html {
 
   html,
   body {
-    @apply size-full text-lg;
+    @apply size-full text-base md:text-lg;
   }
 
   body {
@@ -50,13 +50,13 @@ html {
   }
 
   header {
-    @apply fixed top-0 right-0 left-0 z-50 py-6;
+    @apply fixed top-0 right-0 left-0 z-50 py-4 md:py-6;
     @apply bg-black/80;
     @apply saturate-200 backdrop-blur-xs;
   }
 
   main {
-    @apply mx-auto max-w-6xl px-3 pt-22 pb-32;
+    @apply mx-auto max-w-6xl px-4 pt-32 pb-32 md:px-6 md:pt-28;
   }
 
   footer {
