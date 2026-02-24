@@ -1,0 +1,180 @@
+---
+title: 'Using Russian Transliteration to Crack Complex Passwords'
+description: 'The word ghbdtn is valid Russian, surprisingly...'
+date: 2026-02-24
+tags: ['hacking', 'password cracking', 'cryptography', 'cybersecurity']
+image: 'https://softcorporation.com/products/cyrillic/lay1.gif'
+authors: ['shaffan']
+---
+
+## Introduction
+
+Take a look at these passwords:
+
+```
+vfccjdbrpfntqybrk.lf
+aeylfvtynfkmystbccktljdfybz
+bnjvtufkjdbhecyfzbyatrwbjyyfz
+tybnyjhfrtnyfzhflbjkjrfwbjyyfz
+```
+To you they look randomly generated, but to me these are Russian passwords. Russian transliteration to be precise. So how exactly did I crack these passwords, and what do they even mean?
+
+
+## What is Transliteration?
+Transliteration *is not* the same as *translation*. When you translate a word into English, you change its **meaning** into English; but when you transliterate it, you only change how it's **written or pronounced** using the English alphabet, while keeping the word's original meaning.
+
+[![Russian-keyboard](https://m.media-amazon.com/images/I/61fg0enBGjL._AC_UF1000,1000_QL80_.jpg)](https://m.media-amazon.com/images/I/61fg0enBGjL._AC_UF1000,1000_QL80_.jpg)
+
+This is a Russian QWERTY keyboard; it has both Russian and English letters. If we map out Russian letters to their equivalent English letters according to this keyboard, then we have just translitered Russian into English.
+
+For example, the Russian letter `Ф` is mapped to `A` according to this keyboard. `Ы` maps to `S`, `B` maps to `D`, etc. To automate this tedious task, we can leverage `sed` from Linux:
+
+````console title="translit.sed" showLineNumbers=false collapse={10-65}
+s/A/F/g
+s/Ф/A/g
+s/B/D/g
+s/В/D/g
+s/И/B/g
+s/С/C/g
+s/C/C/g
+s/T/N/g
+s/Е/T/g
+s/E/T/g
+s/У/E/g
+s/П/G/g
+s/Н/Y/g
+s/H/Y/g
+s/Р/H/g
+s/P/H/g
+s/З/P/g
+s/Ш/I/g
+s/О/J/g
+s/K/R/g
+s/Л/K/g
+s/Д/L/g
+s/М/V/g
+s/M/V/g
+s/Ь/M/g
+s/Щ/O/g
+s/Й/Q/g
+s/Ы/S/g
+s/Г/U/g
+s/Ц/W/g
+s/Ч/X/g
+s/Я/Z/g
+s/а/f/g
+s/a/f/g
+s/ф/a/g
+s/и/b/g
+s/б/b/g
+s/Б/b/g
+s/с/c/g
+s/c/c/g
+s/т/n/g
+s/в/d/g
+s/е/t/g
+s/e/t/g
+s/у/e/g
+s/н/y/g
+s/п/g/g
+s/р/h/g
+s/p/h/g
+s/з/p/g
+s/ш/i/g
+s/о/j/g
+s/к/r/g
+s/k/r/g
+s/л/k/g
+s/д/l/g
+s/ь/m/g
+s/щ/o/g
+s/й/q/g
+s/ы/s/g
+s/г/u/g
+s/м/v/g
+s/ц/w/g
+s/ч/x/g
+s/я/z/g
+````
+- `s` means **substitution**
+- `/Ф/` what we want to **replace**
+- `/A/` what want to **take place**
+- `/g` means to do this **globally** (i.e do it for the whole file)
+
+Try it:
+```console title="terminal"
+$ echo "привет" | sed -f translit.sed
+ghbdtn
+```
+
+## Let's Transliterate Russian Passwords
+Now that we understand and can implement transliteration with the script above, how do we find Russian passwords? Maybe there is a `rockyou-russian.txt` for us to leverage?
+
+Unfortunately (as far as I've searched), due to many websites only allowing UTF-8 characters into their database, any leaked Russian password is merely an English word/phrase or a Russian word/phrase translitered. We must leverage something else...
+
+## Wikidumps
+The WikiMedia Foundation allows us access to their database, which means we can [download Russian Wikipedia articles](https://dumps.wikimedia.org/ruwiki/), remove digits and punctuation, lower case all characters, and transliterate them with our `translit.sed` script. We can also use other sources, such as:
+- [ruwikinews](https://dumps.wikimedia.org/ruwikinews/)
+- [ruwiktionary](https://dumps.wikimedia.org/ruwiktionary/)
+
+To remove digits, punctuation, and lower case all characters within our source file, we can use `tr`:
+```console title="removing digits, punctuation, and lower casing all characters"
+$ cat source.dict | tr -d '[:digit]' | tr -d '[:punct]' | tr '[:upper:]' '[:lower]' > prepared-source.dict
+```
+<details>
+  <summary>Explain this</summary>
+
+- `cat` reads our file and outputs it to `stdout`  
+- `|` pipes our `stdout` to the next binary (in this case it's `tr`)  
+- `tr -d '[:digit]'` removes digits  
+- `tr -d '[:digit]'` removes punctuation  
+- `tr '[:upper:]' '[:lower]'` lowercases uppercase characters  
+- `>` streams the result to a file  
+
+</details>
+
+Before transliterating our new prepared file, we must deduplicate it (remove duplicates). We can use [nil0x42/duplicut](https://github.com/nil0x42/duplicut)
+```console title="installing duplicut"
+$ git clone https://github.com/nil0x42/duplicut 
+$ cd duplicut/ && make                          
+```
+```console title="duplicating prepared source"
+$ ./duplicut -o deduplicated-prepared-source.dict prepared-source.dict
+```
+
+Now we can transliterate:
+```console title="translitering with translit.sed"
+$ cat deduplicated-prepared-source.dict | sed -f translit.sed > transliterated.dict
+```
+
+Once we have generated a transliterated file, we should deduplicate it one last time:
+
+```console title="duplication"
+$ ./duplicut -o deduplicated-transliterated.dict translitered.dict
+```
+
+We're done. We can use this in Hashcat to crack complex passwords. 
+
+## Using Combinator Mode to Crack Long Transliterated Passwords
+The passwords I showcased above were all cracked using Hashcat's combinator mode. To put it simply, Hashcat takes two wordlists, and then creates a password combining them together.
+
+For example, if `chickennoodle` is in `file1.txt` and `dumpling` in `file2.txt`, then:
+```console title="hashcat combinator mode"
+$ hashcat -a 1 --stdout file1.txt file2.txt
+chickennoodledumpling
+...
+```
+Would produce the password above. We can leverage this by passing `deduplicated-transliterated.dict` twice:
+```console title="hashcat combinator mode"
+$ hashcat -a 1 --stdout deduplicated-transliterated.dict deduplicated-transliterated.dict
+vfccjdbrpfntqybrk.lf
+aeylfvtynfkmystbccktljdfybz
+bnjvtufkjdbhecyfzbyatrwbjyyfz
+tybnyjhfrtnyfzhflbjkjrfwbjyyfz
+...
+```
+
+## Conclusion
+At the end of the day, nothing in computers is *truly* random. We can use other techniques to help us generate pseudorandom passwords to crack even more complex passwords. The lesson to be learnt here is to always use an extremely long, complex password that has upper and lower cases, symbols, and digits. I can assure you that `4tYb!n6y$%/Jh)f.r3T-n/|yF?zh8*flb09Jkj!RFw[bjyYfZ!26&?` is significantly more difficult to crack than `tybnyjhfrtnyfzhflbjkjrfwbjyyfz`. Use password managers (like Bitwarden), change your passwords as often as you can, and sign-up for data breach alerts from [Have I Been Pwned](https://haveibeenpwned.com/NotifyMe) and other sites.
+
+As always, happy cracking, do not use it for malicious purposes, obviously.
