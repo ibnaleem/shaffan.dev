@@ -17,28 +17,24 @@ const projects = await getAllProjects()
     <div class="min-w-full">
       <div class="prose mb-8">
         <p class="mt-0">
-          astro-erudite is an opinionated, unstyled static blogging template
-          that prioritizes simplicity and performance, built with <Link
-            href="https://astro.build"
+          By day I'm a Software Engineer @ Diagnostic World. By night I'm an offensive security researcher that develops open-source tools on GitHub under the alias <Link
+            href="https://github.com/ibnaleem/"
             external
-            underline>Astro</Link
-          >, <Link href="https://tailwindcss.com" external underline
-            >Tailwind</Link
-          >, and <Link href="https://ui.shadcn.com" external underline
-            >shadcn/ui</Link
-          >. It provides a clean foundation for your content while being
-          extremely easy to customize.
+            underline>@ibnaleem</Link
+          >. I'm also studying Computer Science @ University of Liverpool.
         </p>
         <p>
-          To learn more about the philosophy behind this template, check out the
-          following blog post: <Link
-            href="/blog/the-state-of-static-blogs"
-            underline>The State of Static Blogs in 2024</Link
-          >.
+          I'm currently working on GoSearch, an open-source intelligence tool written in Go.
+        </p>
+        <p>
+        I've mostly learned everything from free and open-source resources on the internet. I believe information should be free and accessible to everyone across the world. That's why I've created this website: to share my knowledge and projects with you. 
+        </p>
+        <p>
+        Apart from technology, I really love cats. You can always email me a picture of your cat.
         </p>
       </div>
 
-      <h2 class="mb-4 text-2xl font-medium">Example Projects Listing</h2>
+      <h2 class="mb-4 text-2xl font-medium">Projects</h2>
       <div class="flex flex-col gap-4">
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
