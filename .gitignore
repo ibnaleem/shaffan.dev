@@ -11,3 +11,9 @@ pnpm-debug.log*
 .idea/
 teaser.pptx
 ~$teaser.pptx
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
