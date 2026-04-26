@@ -1,0 +1,89 @@
+---
+title: 'Introduction to Information Security: The CIA Triad'
+description: 'The three principles that every secure system is built on and what happens when any of them fail'
+date: 2026-04-26
+tags: ['cybersecurity', 'information-security', 'introduction-to-information-security', 'fundamentals', 'computer-science']
+image: 'https://d2cest1yk6hx2d.cloudfront.net/uninets-001/store/3057/article%20images/cia-triad-image.png'
+authors: ['shaffan']
+---
+
+## Preface
+Welcome to my [#introduction-information-security](https://shaffan.dev/tags/introduction-to-information-security) series. This series is written for beginners who are interested in [#information-security](https://shaffan.dev/tags/information-security) and [#cybersecurity](https://shaffan.dev/tags/cybersecurity). You do not need to have any knowledge in [#computer-science](https://shaffan.dev/tags/computer-science) to proceed with this series. 
+
+Those familiar with networking definitions can skip over to [*Confidentiality*](#confidentiality).
+
+## Networks: LAN, WAN & the Internet
+A network is any group of connected devices that can communicate with each other. At a minimum, there must be at least 2 devices that are connected and can communicate to each other. A single computer cannot be a network, by definition.
+
+Here, *connection* is an established [*transmission medium*](https://en.wikipedia.org/wiki/Transmission_medium) between devices. These can range from ethernet cables to radio waves. As long as data can be *transferred* and *received*, it is a connection.
+
+### LAN
+A **L**ocal **A**rea **N**etwork (`LAN`) defines a network of devices that are physically near each other. Devices connected in homes, schools, hospitals, offices, etc. are all examples of `LANs`. When two devices in a local area are connected, they create a `LAN`.
+
+Before the internet became widely available, gamers used to rent out large social spaces like auditoriums, theatres, high-school gyms, cafes, etc. to host `LAN` parties by  bringing their computers and connecting them all together to simulate what online multiplayer is today.
+
+![LAN Party](https://dl6pgk4f88hky.cloudfront.net/2021/06/gettyimages-78171935.jpg)
+
+### WAN
+Much like a LAN, a **W**ide **A**rea **N**etwork (`WAN`) defines a network of devices that connect locales to each other. `Schools <-> Schools`; `Hospitals <-> Hospitals`; `Office A <-> Headquarters`; `City 1 <-> City 2` etc. An Internet Service Provider (ISP), creates a `WAN` by connecting many homes to their network, creating a network of LANs, which then connect to the `GAN`.
+
+### GAN (or the Internet)
+A network of `WANs` is a **G**lobal **A**rea **N**etwork: when two countries connect their `WAN` architecture together, they create a `GAN`. Moving forward, `GAN` will be referenced as *the internet* since that is what it is by definition. 
+
+In order to create the internet, multiple `WANs` must be connected together, and this is achieved by using fibre optic cables deep in the ocean that connect a `WAN` in one country to a `WAN` in another country. 
+
+![Deep ocean internet cables](https://blog.apnic.net/wp-content/uploads/2019/03/113kqFSriWoCDwK30CFHKSQ.png)
+
+It is a misconception to assume that the internet is the same as Wi-Fi, and an even bigger misconception to assume the internet is only connected through satellites. Wi-Fi is a *medium of transmission*: it gives specifications to devices for how to communicate without a direct cable connection. It is not the internet, nor did it create the internet, nor does it define the internet.
+
+The same goes for satellites: they are nodes that help relay traffic from one node to another. Technically, an internet could be created with satellites, but this would drastically slow down internet speeds and overload satellites to become unusable.
+
+## Confidentiality
+The **C** in the **C**IA triad stands for *confidentiality*: confidentiality ensures data is only accessed by authorised parties. It aims to prevent unauthorised parties from reading confidential data. All systems have to adhere to this in information security, such as keeping the encryption keys secret. 
+
+## Integrity
+Integrity aims to keep data consistent, accurate, original (i.e from the original source) and trustworthy. Integrity aims to prevent the modification, replication, insertion or fabrication of data. It also aims to keep the original source of the data, so that there is a party to be credited or blamed for the transmission of that data.
+
+## Availability
+Availability aims to ensure authorised data is delivered to authorised parties when requested. 
+
+For example, `Computer A` has Bob's passport. Availability ensures that, whenever Bob queries `Computer A` for his passport (with the right credentials), `Computer A` returns them to Bob without fail. If it fails in any way, it is violating availability.
+
+## Test Your Knowledge
+1. What is the difference between a LAN and a WAN?
+<details>
+  <summary>Answer</summary>
+  A LAN (Local Area Network) is a network that connects computers within a local area, such as a home, school, or office building. A WAN (Wide Area Network) is a network that spans a large geographical area, such as a city and country.
+</details>
+2. What is the difference between a WAN and the internet?
+<details>
+  <summary>Answer</summary>
+  A WAN (Wide Area Network) is a network that spans a large geographical area, such as a city and country. The internet is a global network of interconnected WANs.
+</details>
+
+3. What is the difference between the internet and Wi-Fi?
+<details>
+  <summary>Answer</summary>
+  The internet is a global network of interconnected networks. Wi-Fi is a technology that allows devices to connect to a local area network (LAN) without the use of cables.
+</details>
+
+4. What is the difference between the internet and satellites?
+<details>
+  <summary>Answer</summary>
+  The internet is a global network of interconnected networks. Satellites are objects in space that can be used to relay data between different locations on Earth, but they are not the internet itself.
+</details>
+5. Bob was able to intercept Alice's message and modify it before it reached Alice. Which principle of the CIA triad did Bob violate?
+<details>
+  <summary>Answer</summary>
+  Integrity, since he modified the message before it reached Alice.
+</details>
+6. Alice's computer was infected with ransomware, which encrypted all of her files and made them inaccessible to her. Which principle of the CIA triad did the ransomware violate?
+<details>
+  <summary>Answer</summary>
+  Availability, since it made Alice's files inaccessible to her.
+</details>
+
+## Conclusion
+The CIA triad specifies the three principles that a secure system should have as a bare minimum. It ensures that confidentiality is addressed and implemented to access data, that the data is consistent, unmodified, and trustworthy, and that the data is available to begin with.
+
+In the next section, we will go over [The OSI Security Architecture](https://shaffan.dev/blog/introduction-to-information-security-the-osi-security-architecture).
