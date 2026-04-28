@@ -15,7 +15,7 @@ Even though it may seem obvious, a security attack is any action that gains unau
 A security mechanism is a mechanism that is designed to detect, prevent, or recover from a security attack. For example, encryption is a security mechanism that prevents unauthorised access to information. Any action that is designed to prevent, detect, or recover from a security attack is considered a security mechanism.
 
 ## What is a Security Service?
-A security service is the specification of how security mechanisms are used together to provide a security service. For example, data confidentiality is a security service which implements encryption, zero-knowledge proofs, multi-factor authentication, IP whitelisting, etc. to achieve its goal of confidentiality. Think of it as a way to categorise security mechanisms to achieve a specific security goal.
+A security service is the specification of how security mechanisms are used together to provide a security service. For example, **data confidentiality** is a security service which implements encryption, zero-knowledge proofs, multi-factor authentication, IP whitelisting, etc. to achieve its goal of confidentiality. Think of it as a way to categorise security mechanisms to achieve a specific security goal.
 
 ## Two Types of Security Attacks
 Security attacks can be either be **passive** or **active**.
@@ -23,43 +23,43 @@ Security attacks can be either be **passive** or **active**.
 ### Passive Attacks
 Passive attacks aim to learn information from a system without affecting system resources. Due to their nature, they are difficult to detect without producing thousands of false positives. Therefore, its countermeasure is prevention rather than detection. Some examples include:
 
-- Keystroke logging
-- Eavesdropping
-- Wiretapping
-- Packet sniffing
-- Traffic analysis
-- Shoulder surfing
+- **Keystroke logging**
+- **Eavesdropping**
+- **Wiretapping**
+- **Packet sniffing**
+- **Traffic analysis**
+- **Shoulder surfing**
 
 ### Active Attacks
 Active attacks are attacks that attempt to alter system resources. Due to how easy they are to detect, the countermeasure for an active attack is detection rather than prevention. Some examples include:
 
-- Denial of Service (DoS) attack
-- Man-in-the-middle attack
-- Phishing attack
-- Ransomware attack
-- SQL injection attack
-- Cross-site scripting (XSS) attack
-- Brute-force attack
-- Password spraying attack
-- Credential stuffing attack
+- **Denial of Service (DoS) attack**
+- **Man-in-the-middle attack**
+- **Phishing attack**
+- **Ransomware attack**
+- **SQL injection attack**
+- **Cross-site scripting (XSS) attack**
+- **Brute-force attack**
+- **Password spraying attack**
+- **Credential stuffing attack**
 
 ## Types of Security Attacks
-- Interruption: An attack that disrupts the normal functioning of a system (affects availability)
-- Interception: An attack that involves intercepting communication between two parties (affects confidentiality)
-- Modification: An attack that involves altering data during transmission or storage (affects integrity)
-- Fabrication: An attack that involves creating false information or messages without a legitimate source (affects authenticity)
+- **Interruption:** An attack that disrupts the normal functioning of a system (affects availability)
+- **Interception:** An attack that involves intercepting communication between two parties (affects confidentiality)
+- **Modification:** An attack that involves altering data during transmission or storage (affects integrity)
+- **Fabrication:** An attack that involves creating false information or messages without a legitimate source (affects authenticity)
 
 ## What is Authenticity?
 Authenticity refers to the assurance that data is from a genuine source without any tampering. Unlike integrity, which focuses on ensuring data has not been altered, authenticity ensures that the source of the data is legitimate. A fabrication attack compromises authenticity since it creates false information posing as a legitimate source. In the information security community, many have argued for authenticity to be included in the CIA triad, but some have argued that it is too closely related to integrity to be considered a separate concept.
 
 ## Security Services
 X.800 Recommendation divides security services into six categories:
-- Authentication
-- Access Control
-- Data Confidentiality
-- Data Integrity
-- Non-repudiation
-- Availability
+- **Authentication**
+- **Access Control**
+- **Data Confidentiality**
+- **Data Integrity**
+- **Non-repudiation**
+- **Availability**
 
 ### Authentication
 The authentication service assures that communication is authentic between two parties. It ensures that the recipient can trust the source of the message and who they are communicating with. 
@@ -68,41 +68,41 @@ It also ensures that all communicating parties can trust that their communicatio
 
 ### Access Control
 The access control service wants to prove four things:
-- Who can have access to the resource
-- Under what conditions can they have access to the resource
-- What type of access they have to the resource
-- What they can do with their access to the resource
+- **Who can have access to the resource**
+- **Under what conditions can they have access to the resource**
+- **What type of access they have to the resource**
+- **What they can do with their access to the resource**
 
 To understand this concept better, let's assume Bob has a bank account with *Evil Corp*. The access control service would want to prove the following:
 
-- Who can have access to the resource: Bob and *Evil Corp* employees
-- Under what conditions can they have access to the resource: Bob and *Evil Corp* can only access Bob's account with valid authentication
-- What type of access they have to the resource: Bob has read and write access, *Evil Corp* employees have read, write, modify, and delete access
-- What they can do with their access to the resource: Bob can view his account balance, make transactions, transfer money, change his account details, request statements, categorise transactions, view his spending habits, etc. *Evil Corp* employees can do all of the above, plus modify and delete Bob's account details, but they cannot modify or delete Bob's transactions
+- **Who can have access to the resource:** Bob and *Evil Corp* employees
+- **Under what conditions can they have access to the resource:** Bob and *Evil Corp* can only access Bob's account with valid authentication
+- **What type of access they have to the resource:** Bob has read and write access, *Evil Corp* employees have read, write, modify, and delete access
+- **What they can do with their access to the resource:** Bob can view his account balance, make transactions, transfer money, change his account details, request statements, categorise transactions, view his spending habits, etc. *Evil Corp* employees can do all of the above, plus modify and delete Bob's account details, but they cannot modify or delete Bob's transactions
 
 ### Data Confidentiality
 The data confidentiality service protects data from unauthorised access. It ensures this by implementing four other services:
 
-- Connection confidentiality: Data is protected during transmission (e.g transport layer security (TLS))
-- Connectionless confidentiality: Data is protected when it is not being transmitted (e.g asymmetric encryption)
-- Selective field confidentiality: Only specific fields of data are protected (e.g passwords, credit card details, etc.)
-- Traffic flow confidentiality: Protects the patterns of communication between parties (e.g. who is communicating with who, how often, etc.)
+- **Connection confidentiality:** Data is protected during transmission (e.g. transport layer security (TLS))
+- **Connectionless confidentiality:** Data is protected when it is not being transmitted (e.g. asymmetric encryption)
+- **Selective field confidentiality:** Only specific fields of data are protected (e.g. passwords, credit card details, etc.)
+- **Traffic flow confidentiality:** Protects the patterns of communication between parties (e.g. who is communicating with who, how often, etc.)
 
 ### Data Integrity
 The data integrity service ensures that data was received exactly as it was sent from an authorised party, containing:
 
-- no modification
-- no insertion
-- no deletion
-- no replay
+- **No modification**
+- **No insertion**
+- **No deletion**
+- **No replay**
 
 Replaying information is resending the same information more than once. For example, a double bank transaction for one transaction. Replays are actually insertions, by definition.
 
 ### Non-repudiation
 The non-repudiation service ensures that a party cannot deny their involvement in a communication. At a minimum, non-repudiation requires two proofs:
 
-- Proof of origin: Proof that the message was sent by an authorised party
-- Proof of delivery: Proof that a message was received by the intended recipient
+- **Proof of origin:** Proof that the message was sent by an authorised party
+- **Proof of delivery:** Proof that a message was received by the intended recipient
 
 It is especially important in legal contexts, for example, Bob buying flowers from the corner shop then later denying to his bank that he made the transaction.
 
