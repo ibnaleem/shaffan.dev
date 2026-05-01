@@ -7,16 +7,25 @@ export async function GET(context: APIContext) {
   try {
     const posts = await getAllPosts()
 
+    const items = await Promise.all(
+      posts.map(async (post) => {
+        const { Content } = await post.render()
+
+        return {
+          title: post.data.title,
+          description: post.data.description,
+          pubDate: post.data.date,
+          link: `/blog/${post.id}/`,
+          content: Content(),
+        }
+      })
+    )
+
     return rss({
       title: SITE.title,
       description: SITE.description,
       site: context.site ?? SITE.href,
-      items: posts.map((post) => ({
-        title: post.data.title,
-        description: post.data.description,
-        pubDate: post.data.date,
-        link: `/blog/${post.id}/`,
-      })),
+      items,
     })
   } catch (error) {
     console.error('Error generating RSS feed:', error)
